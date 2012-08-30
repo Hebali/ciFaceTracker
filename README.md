@@ -9,7 +9,7 @@ The model file paths ("face2.tracker", etc) are pulled from the package contents
 path tBasePath = path( ci::app::AppBasic::getResourcePath() );
 
 So, in Xcode, you can drop the model folder into Resources and you don't have to deal with "Resources.h"
-I haven't tested this on Windows, making this a bit of a hack. 
+I haven't tested this on Windows and suspect it won't work - making this a temporary hack. 
 
 TODO:
 - Test Expression and ExpressionClassifier file loading and saving. Should be implemented now, haven't had time to test yet. 
