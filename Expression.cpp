@@ -29,39 +29,22 @@ void Expression::reset() {
 }
 
 void Expression::save(string filename) const {
-    ofstream tFile;
-    /*
-    tFile.open( filename );
-    tFile << "description" << description << "samples" << "[";
-    
-    int tCount = size();
-    for(int i = 0; i < tCount; i++) {
-		tFile << samples[i];
-	}
-    tFile << "]";
-    tFile.close();
-    */
-    
-    /* TODO
-	FileStorage fs(ofToDataPath(filename), FileStorage::WRITE);
+    cv::FileStorage fs( filename, cv::FileStorage::WRITE);
 	fs <<	"description" << description <<
 	"samples" << "[";
 	for(int i = 0; i < size(); i++) {
 		fs << samples[i];
 	}
 	fs << "]";
-    */
 }
 
 void Expression::load(string filename) {
-    /* TODO
-	FileStorage fs(ofToDataPath(filename), FileStorage::READ);
+	cv::FileStorage fs( filename, cv::FileStorage::READ);
 	description = (string) fs["description"];
-	FileNode samplesNode = fs["samples"];
+	cv::FileNode samplesNode = fs["samples"];
 	int n = samplesNode.size();
 	samples.resize(n);
 	for(int i = 0; i < n; i++) {
 		samplesNode[i] >> samples[i];
 	}
-    */
 }

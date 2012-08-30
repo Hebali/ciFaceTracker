@@ -61,16 +61,15 @@ void ciFaceTracker::setup() {
 	wSize2[1] = 9;
 	wSize2[2] = 7;
     
-    // TODO!!
-	// YOU NEED TO INSERT THE FULL PATH TO THESE FILES HERE...
-    // ACTUAL SOLUTION COMING SOON.
-	string ftFile = "model/face2.tracker";
-	string triFile = "model/face.tri";
-	string conFile = "model/face.con";
+    path tBasePath = path( ci::app::AppBasic::getResourcePath() );
+    
+    path tFtPath  = tBasePath / "face2.tracker";
+    path tTriPath = tBasePath / "face.tri";
+    path tConPath = tBasePath / "face.con";
 	
-	tracker.Load(ftFile.c_str());
-	tri = IO::LoadTri(triFile.c_str());
-	con = IO::LoadCon(conFile.c_str());  // not being used right now
+	tracker.Load( tFtPath.string().c_str() );
+	tri = IO::LoadTri( tTriPath.string().c_str() );
+	con = IO::LoadCon( tConPath.string().c_str() );  // not being used right now
 }
 
 bool ciFaceTracker::update(cv::Mat image) {
