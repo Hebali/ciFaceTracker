@@ -1,5 +1,6 @@
 /*
  ciFaceTracker provides an interface to Jason Saragih's FaceTracker library.
+ Ported from Kyle McDonald's ofxFaceTracker by Patrick Hebron.
  
  getImagePoint()/getImageMesh() are in image space. This means that all the
  points will line up with the pixel coordinates of the image you fed into
