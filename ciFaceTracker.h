@@ -25,7 +25,7 @@
 
 #include "CinderOpenCv.h"
 
-#include "FTracker.h"
+#include "Tracker.h"
 #include "ExpressionClassifier.h"
 
 using namespace ci;
